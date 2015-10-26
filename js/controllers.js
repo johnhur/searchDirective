@@ -8,7 +8,8 @@ app.controller('SearchController', ['$scope', function($scope){
 	$scope.test = "WORKING"
 
 	$scope.addEntity = function(input){
-		$scope.input = []
+		$scope.data.push($scope.newEnt)
+		$scope.newEnt = ""
 	}
 
 }])

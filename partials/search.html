@@ -1,25 +1,20 @@
-<h1>HELLO</h1>
 
-Category: <select ng-model="choice">
-	<option value="movie">movie</option>
-	<option value="actor">actor</option>
-	<option value="director">director</option>
-</select>
 
-Search by Name: <input ng-model="search">
-		
-<!-- 		<div ng-show="choice === option">
+<div style="margin-left: 15%, margin-right: ">
+Type: <input class="form-control" ng-model="newEnt.type">
+Name: <input class="form-control" ng-model="newEnt.name">
+<button ng-click="addEntity()" type="button" class="btn btn-info">Add Entity</button>
+</div>
 
-		<input> -->
+<br></br>
+<div>
+Search by Category: 
+<input ng-model="choice">
+
+Search by Name:
+
+<input ng-model="search">
 			<ul>
-				<li ng-repeat="object in data | filter: choice | filter: search "> {{object}}</li>
+				<li ng-repeat="object in data | filter: choice | filter: search "> Type: {{object.type}} - Name: {{object.name}}</li>
 			</ul>
-<!--  -->
-		
-<!-- 		<ul ng-show="choice === 'actors'">
-			<li ng-repeat="object in actors"> {{object.name}}</li>
-		</ul>
-		
-		<ul ng-show="choice === 'directors'">
-			<li ng-repeat="object in directors"> {{object.name}}</li>
-		</ul> -->
+</div>
