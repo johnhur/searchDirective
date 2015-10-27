@@ -1,15 +1,19 @@
 app.controller('SearchController', ['$scope', function($scope){
 	$scope.data = [
-		{type:"movie", name:"The developHUR"},
+		{type:"movie", name:"The Develop-HUR"},
 		{type:"actor", name:"John Hur"},
-		{type:"director", name:"Ben Hur"}
+		{type:"director", name:"Phil Kim"}
 		]
 
-	$scope.test = "WORKING"
+	$scope.showForm = false
 
 	$scope.addEntity = function(input){
 		$scope.data.push($scope.newEnt)
 		$scope.newEnt = ""
+	}
+
+	$scope.toggleForm = function(){
+		$scope.showForm = !$scope.showForm
 	}
 
 }])

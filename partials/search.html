@@ -1,20 +1,53 @@
 
-
-<div style="margin-left: 15%, margin-right: ">
-Type: <input class="form-control" ng-model="newEnt.type">
-Name: <input class="form-control" ng-model="newEnt.name">
-<button ng-click="addEntity()" type="button" class="btn btn-info">Add Entity</button>
-</div>
+<div class="ui grid">
+	<div class="three wide column"></div>
+	<div class="ten wide column">
 
 <br></br>
-<div>
-Search by Category: 
-<input ng-model="choice">
 
-Search by Name:
+		<button ng-click="toggleForm()" ng-show="!showForm" type="button" class="fluid blue ui button">Add New Entity</button>
+				
+				<div class="ui form" ng-show="showForm">
+				<div class="two fields">
+					<div class="field">
+				  <label>Type</label>
+				  <input ng-model="newEnt.type" type="text" placeholder="Type">
+				  </div> 
+				<div class="field">
+				  <label>Name</label>
+				  <input ng-model="newEnt.name" type="text" placeholder="Name">
+				</div>
+				</div>
+				<button ng-click="addEntity()" type="button" class="fluid teal ui button">Submit Entity</button>
+				</div>
+	
+<br></br>
 
-<input ng-model="search">
-			<ul>
-				<li ng-repeat="object in data | filter: choice | filter: search "> Type: {{object.type}} - Name: {{object.name}}</li>
-			</ul>
+				<div>
+					<div class="ui form">
+					<div class="two fields">
+						<div class="field">
+					  <label>Search by Type</label>
+					  <input ng-model="choice" type="text" placeholder="Search by type">
+					  </div> 
+					<div class="field">
+					  <label>Search by Name</label>
+					  <input ng-model="search" type="text" placeholder="Search by name">
+					</div>
+					</div>
+				</div>
+
+				<div class="ui middle aligned selection list">
+				  <div class="item" ng-repeat="object in data | filter: choice | filter: search">
+				    <div class="content">
+				      <div class="header">Type: {{object.type}} - Name: {{object.name}}</div>
+				    </div>
+				  </div>
+				</div>
+
+			</div>
+	</div>
+
+	<div class="three wide column"></div>
+
 </div>
